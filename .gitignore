@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Generated reports
+backend/validation_report.pdf
+backend/validation_report.txt
+
+# Node
+frontend/node_modules/
+
+# Environment
+.env
