@@ -1,48 +1,26 @@
-# CAN Log Validation Dashboard
+# 🚗 CAN Log Validation Dashboard
 
-An automotive CAN Log Analysis and Validation Dashboard built using React, FastAPI, Python, Pandas, and Chart.js.
+A full-stack web application for analyzing automotive CAN log files, detecting validation issues, visualizing results, and generating downloadable reports.
 
-## Overview
+![Dashboard Preview](screenshots/full-dashboard.png)
 
-This project analyzes CAN bus log files and automatically detects validation issues commonly encountered during ECU and vehicle testing.
-
-The dashboard allows users to:
-
-* Upload CAN log CSV files
-* Analyze CAN messages
-* Detect abnormal signal behavior
-* Generate validation reports
-* Visualize issue severity
-* Monitor signal frequency
-* Export PDF and text reports
+---
 
 ## Features
 
-### File Upload & Analysis
-
-* Upload any CAN log CSV file
-* Real-time log validation
-* Automatic issue detection
-
-### Validation Dashboard
-
-* System health score
-* PASS / FAIL status
-* Message statistics
-* CAN ID statistics
-* Signal statistics
-
-### Visualization
-
+* Upload CAN log CSV files
+* Automatic CAN log analysis
+* Detect low battery voltage and signal anomalies
+* PASS / FAIL validation status
+* System health score calculation
 * Severity distribution chart
 * Signal frequency chart
-* Issue summary dashboard
-
-### Reporting
-
+* Validation recommendations
 * Download PDF report
 * Download text report
-* Validation recommendations
+* Upload history
+
+---
 
 ## Technology Stack
 
@@ -60,45 +38,165 @@ The dashboard allows users to:
 * Pandas
 * Uvicorn
 
-## Project Structure
+---
+
+## Project Architecture
 
 ```text
-can-log-validation-dashboard/
+                User
+                  │
+                  ▼
+         React Frontend (Vite)
+                  │
+        Upload CAN Log CSV
+                  │
+                  ▼
+          FastAPI REST API
+                  │
+          Pandas Data Analysis
+                  │
+          Validation Engine
+                  │
+   Issue Detection & Health Score
+                  │
+                  ▼
+ Dashboard + Charts + PDF/Text Reports
+```
+
+A more detailed explanation is available in:
+
+```text
+docs/ARCHITECTURE.md
+```
+
+---
+
+## Folder Structure
+
+```text
+can-log-analyzer
 │
 ├── backend/
 │   ├── main.py
-│   └── requirements.txt
+│   ├── requirements.txt
 │
 ├── frontend/
 │   ├── src/
 │   ├── public/
-│   └── package.json
 │
-└── sample-data/
-    └── can_log.csv
+├── sample-data/
+│   └── can_log.csv
+│
+├── screenshots/
+│   └── full-dashboard.png
+│
+├── docs/
+│   └── ARCHITECTURE.md
+│
+├── CONTRIBUTING.md
+├── LICENSE
+└── README.md
 ```
+
+---
+
+## Getting Started
+
+### Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+Backend URL:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend URL:
+
+```text
+http://localhost:5173
+```
+
+---
 
 ## Sample Validation Checks
 
-* Low Battery Voltage
-* Vehicle Speed Spike
-* Invalid Signal Values
-* Missing CAN Messages
-* Signal Threshold Violations
+Current validation rules include:
+
+* Low battery voltage detection
+* Vehicle speed spike detection
+* Signal threshold validation
+* Severity classification
+* PASS / FAIL determination
+* Health score calculation
+
+---
+
+## Reports
+
+The application can generate:
+
+* PDF validation report
+* Text validation report
+
+Each report includes:
+
+* Validation summary
+* Detected issues
+* Severity level
+* Recommended actions
+
+---
 
 ## Future Enhancements
 
-* DBC file support
+* DBC file decoding
 * BLF and ASC log support
 * Live CAN streaming
-* Advanced signal decoding
-* Authentication and user management
+* CAN message timeout detection
+* Rolling counter validation
+* CRC validation
+* Authentication
 * Cloud deployment
+
+---
+
+## Skills Demonstrated
+
+* Full-stack development
+* REST API development
+* Automotive CAN log analysis
+* Data processing with Pandas
+* React UI development
+* Report generation
+* Git & GitHub workflow
+* Software validation concepts
+
+---
 
 ## Author
 
-Virupa Kondepati
-
-Automotive Software Validation Engineer
+**Virupa Kondepati**
 
 GitHub: https://github.com/Virupa27
+
+---
+
+## License
+
+This project is licensed under the MIT License.
