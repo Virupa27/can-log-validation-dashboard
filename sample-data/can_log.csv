@@ -1,0 +1,8 @@
+timestamp,can_id,signal_name,value,status
+0.001,0x100,VehicleSpeed,0,OK
+0.010,0x101,BatteryVoltage,13.5,OK
+0.020,0x102,BrakeStatus,0,OK
+0.030,0x100,VehicleSpeed,10,OK
+0.040,0x101,BatteryVoltage,9.2,LOW_VOLTAGE
+0.050,0x103,SteeringAngle,15,OK
+0.090,0x100,VehicleSpeed,80,SPIKEls ../sample-data
