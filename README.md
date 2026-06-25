@@ -1,6 +1,16 @@
-# 🚗 CAN Log Validation Dashboard
+# 🚗 CAN Log Validation Dashboard | React + FastAPI + Automotive Diagnostics
 
 A full-stack web application for analyzing automotive CAN log files, detecting validation issues, visualizing results, and generating downloadable reports.
+
+## 🌐 Live Demo
+
+**Frontend**
+
+https://can-log-validation-dashboard-o2nc-ot5500ejt-virupa-projects.vercel.app
+
+**Backend API**
+
+https://can-log-validation-backend.onrender.com
 
 ![Dashboard Preview](screenshots/full-dashboard.png)
 
@@ -21,6 +31,17 @@ A full-stack web application for analyzing automotive CAN log files, detecting v
 * Upload history
 
 ---
+
+## 🚀 Project Highlights
+
+- Full-stack React + FastAPI application
+- Interactive dashboard with PASS/FAIL validation
+- Real-time CAN log analysis
+- PDF and text report generation
+- System Health Score calculation
+- Interactive charts using Chart.js
+- Deployed on Vercel and Render
+
 
 ## Technology Stack
 
@@ -102,6 +123,14 @@ can-log-analyzer
 
 ## Getting Started
 
+## ☁️ Deployment
+
+| Component | Platform |
+|-----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Version Control | GitHub |
+
 ### Backend
 
 ```bash
@@ -133,6 +162,16 @@ http://localhost:5173
 ```
 
 ---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | / | API Status |
+| POST | /upload-log | Upload and analyze CAN log |
+| GET | /download-report | Download text report |
+| GET | /download-pdf-report | Download PDF report |
+
 
 ## Sample Validation Checks
 
@@ -189,12 +228,24 @@ Each report includes:
 
 ---
 
+
+## ✅ Current Status
+
+- Production Ready
+- Backend deployed on Render
+- Frontend deployed on Vercel
+- Documentation completed
+- GitHub repository maintained
+
+
 ## Author
 
 **Virupa Kondepati**
 
 GitHub: https://github.com/Virupa27
 
+Project Repository:
+https://github.com/Virupa27/can-log-validation-dashboard
 ---
 
 ## License
