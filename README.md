@@ -19,7 +19,7 @@ https://github.com/Virupa27/can-log-validation-dashboard
 
 ## Dashboard Overview
 
-![Dashboard](screenshots/dashboard-overview.png)
+![Dashboard Overview](screenshots/dashboard-overview.png)
 
 ---
 
