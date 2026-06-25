@@ -19,6 +19,8 @@ ChartJS.register(
   LinearScale
 );
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
@@ -34,32 +36,41 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://127.0.0.1:8000/upload-log", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch(`${API_URL}/upload-log`, {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
-    setResult(data);
+      if (!response.ok) {
+        throw new Error("Failed to analyze the uploaded file.");
+      }
 
-    setHistory([
-      {
-        fileName: file.name,
-        messages: data.summary.total_messages,
-        result: data.summary.test_result,
-        errors: data.summary.errors_found,
-        time: new Date().toLocaleString(),
-      },
-      ...history,
-    ]);
+      const data = await response.json();
+      setResult(data);
+
+      setHistory([
+        {
+          fileName: file.name,
+          messages: data.summary.total_messages,
+          result: data.summary.test_result,
+          errors: data.summary.errors_found,
+          time: new Date().toLocaleString(),
+        },
+        ...history,
+      ]);
+    } catch (error) {
+      alert("Error connecting to backend. Please check if the API is running.");
+      console.error(error);
+    }
   }
 
   function downloadTextReport() {
-    window.open("http://127.0.0.1:8000/download-report", "_blank");
+    window.open(`${API_URL}/download-report`, "_blank");
   }
 
   function downloadPdfReport() {
-    window.open("http://127.0.0.1:8000/download-pdf-report", "_blank");
+    window.open(`${API_URL}/download-pdf-report`, "_blank");
   }
 
   const filteredIssues = result
@@ -146,10 +157,18 @@ function App() {
         <>
           <div style={sectionStyle}>
             <h2>Validation Summary</h2>
-            <p><strong>Project:</strong> CAN ECU Validation</p>
-            <p><strong>File:</strong> {file?.name}</p>
-            <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
-            <p><strong>Status:</strong> {result.summary.test_result}</p>
+            <p>
+              <strong>Project:</strong> CAN ECU Validation
+            </p>
+            <p>
+              <strong>File:</strong> {file?.name}
+            </p>
+            <p>
+              <strong>Date:</strong> {new Date().toLocaleDateString()}
+            </p>
+            <p>
+              <strong>Status:</strong> {result.summary.test_result}
+            </p>
           </div>
 
           <div style={healthBox}>
@@ -260,10 +279,18 @@ function App() {
 
                   <h2>{issue.signal}</h2>
 
-                  <p><strong>CAN ID:</strong> {issue.can_id}</p>
-                  <p><strong>Timestamp:</strong> {issue.timestamp}s</p>
-                  <p><strong>Measured Value:</strong> {issue.value}</p>
-                  <p><strong>Issue:</strong> {issue.issue}</p>
+                  <p>
+                    <strong>CAN ID:</strong> {issue.can_id}
+                  </p>
+                  <p>
+                    <strong>Timestamp:</strong> {issue.timestamp}s
+                  </p>
+                  <p>
+                    <strong>Measured Value:</strong> {issue.value}
+                  </p>
+                  <p>
+                    <strong>Issue:</strong> {issue.issue}
+                  </p>
 
                   <div style={actionBox}>
                     <h4>Recommended Action</h4>
