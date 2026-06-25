@@ -12,24 +12,40 @@ https://can-log-validation-dashboard-o2nc-ot5500ejt-virupa-projects.vercel.app
 
 https://can-log-validation-backend.onrender.com
 
-![Dashboard Preview](screenshots/full-dashboard.png)
+## Source Code
 
+GitHub Repository:
+https://github.com/Virupa27/can-log-validation-dashboard
+
+## Dashboard Overview
+
+![Dashboard](screenshots/dashboard-overview.png)
+
+---
+
+## Issue Detection
+
+![Issues](screenshots/issue-detection.png)
+
+---
+
+## Report Generation
+
+![Reports](screenshots/report-history.png)
 ---
 
 ## Features
 
-* Upload CAN log CSV files
-* Automatic CAN log analysis
-* Detect low battery voltage and signal anomalies
-* PASS / FAIL validation status
-* System health score calculation
-* Severity distribution chart
-* Signal frequency chart
-* Validation recommendations
-* Download PDF report
-* Download text report
-* Upload history
-
+- Upload automotive CAN log CSV files
+- Automatic CAN log validation
+- Detect low voltage and signal anomalies
+- Calculate ECU health score
+- PASS / FAIL validation status
+- Interactive charts and analytics
+- Severity-based issue classification
+- Search detected issues
+- Upload history tracking
+- Download PDF and text reports
 ---
 
 ## 🚀 Project Highlights
@@ -123,13 +139,16 @@ can-log-analyzer
 
 ## Getting Started
 
-## ☁️ Deployment
+## Deployment
 
-| Component | Platform |
-|-----------|----------|
-| Frontend | Vercel |
-| Backend | Render |
-| Version Control | GitHub |
+Frontend:
+- Vercel
+
+Backend:
+- Render
+
+Version Control:
+- GitHub
 
 ### Backend
 
@@ -201,51 +220,58 @@ Each report includes:
 * Recommended actions
 
 ---
-
 ## Future Enhancements
 
-* DBC file decoding
-* BLF and ASC log support
-* Live CAN streaming
-* CAN message timeout detection
-* Rolling counter validation
-* CRC validation
-* Authentication
-* Cloud deployment
+- DBC file decoding
+- ASC and BLF log support
+- Real-time CAN bus monitoring
+- CAN message timeout detection
+- Rolling counter validation
+- CRC validation
+- User authentication
+- Cloud database integration
+- Multi-file comparison
+- AI-powered anomaly detection
 
 ---
 
 ## Skills Demonstrated
 
-* Full-stack development
-* REST API development
-* Automotive CAN log analysis
-* Data processing with Pandas
-* React UI development
-* Report generation
-* Git & GitHub workflow
-* Software validation concepts
-
+- Full-Stack Development
+- React.js
+- FastAPI
+- REST API Development
+- Python
+- Pandas
+- Automotive CAN Diagnostics
+- Data Visualization
+- Report Generation
+- Cloud Deployment (Vercel & Render)
+- Git & GitHub
 ---
 
 
-## ✅ Current Status
+## Current Status
 
 - Production Ready
-- Backend deployed on Render
 - Frontend deployed on Vercel
-- Documentation completed
-- GitHub repository maintained
+- Backend deployed on Render
+- REST APIs implemented
+- Interactive Dashboard
+- PDF & Text Report Generation
+- Documentation Completed
 
 
 ## Author
 
 **Virupa Kondepati**
 
-GitHub: https://github.com/Virupa27
+GitHub:
+https://github.com/Virupa27
 
 Project Repository:
 https://github.com/Virupa27/can-log-validation-dashboard
+
 ---
 
 ## License
