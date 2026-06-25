@@ -11,8 +11,10 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",  # Local development
-        "https://can-log-validation-dashboard.vercel.app",  # Production frontend
+        "http://localhost:5173",
+        "https://can-log-validation-dashboard.vercel.app",
+        "https://can-log-validation-dashboard-o2nc.vercel.app",
+        "https://can-log-validation-dashboard-o2nc-esqs13qih-virupa-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
