@@ -8,15 +8,15 @@ from reportlab.pdfgen import canvas
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:5173",
+    "https://can-log-validation-dashboard.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://can-log-validation-dashboard.vercel.app",
-        "https://can-log-validation-dashboard-o2nc.vercel.app",
-        "https://can-log-validation-dashboard-o2nc-esqs13qih-virupa-projects.vercel.app",
-        "https://can-log-validation-dashboard-o2nc-ot5500ejt-virupa-projects.vercel.app",
-    ],
+    allow_origins=origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
