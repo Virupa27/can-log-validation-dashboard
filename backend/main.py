@@ -15,6 +15,7 @@ app.add_middleware(
         "https://can-log-validation-dashboard.vercel.app",
         "https://can-log-validation-dashboard-o2nc.vercel.app",
         "https://can-log-validation-dashboard-o2nc-esqs13qih-virupa-projects.vercel.app",
+        "https://can-log-validation-dashboard-o2nc-ot5500ejt-virupa-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
